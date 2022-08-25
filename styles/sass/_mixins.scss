@@ -1,0 +1,53 @@
+@import "variables";
+
+@mixin overall {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin textStyle($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin responsive($size) {
+  @if ($size == M) {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if($size == L) {
+    @media (min-width: 768px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin bodyStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  background-color: $boxColor;
+  border-radius: 10px;
+  box-shadow: $shadow;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+@mixin sideLinks {
+  background-color: $primaryColor;
+  color: $reactColor;
+  // padding: 1rem 0;
+  border-radius: 20px;
+  margin: 1.3rem 0;
+  width: 80%;
+  height: 110px;
+  line-height: 110px;
+  text-align: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
